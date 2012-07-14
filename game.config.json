@@ -1,0 +1,18 @@
+{
+	"info": {
+		"name": "Lab Invaders",
+		"desc": "Space Invaders clone"
+	},
+	"cursor": true,
+	"vsync": true,
+	"title": "Lab Invaders",
+	"debug": false,
+	"debugright" : true,
+	"datapaths": [],
+	"resolution" : vec2( 500, 500 ),
+	"fullscreen" : false,
+	"resizable" : false,
+	"clearcolor" :  color(0.0, 0.0, 0.0, 1),
+	"resizemode" : "scale",
+	"headless" : true,
+}
