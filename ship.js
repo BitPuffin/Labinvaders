@@ -26,6 +26,7 @@ var Ship = new Class(
 				this.cooldown = false;
 			}
 			this.cooldown_counter++;
+			this.checkCollision();
 		},
 		
 		fire : function() {
@@ -33,6 +34,16 @@ var Ship = new Class(
 			console.log("Fire!");
 			this.cooldown = true;
 			this.cooldown_counter = 0;
+		},
+		
+		checkCollision : function() {
+			game.aliens.each( function( alien, alien_index )
+				{
+					if( this.contains(alien.pos) ) {
+						this.die();
+					}
+				}.bind(this)
+			);
 		},
 		
 		die : function() {

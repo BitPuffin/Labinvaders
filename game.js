@@ -15,12 +15,7 @@ events.connect('onReady', function()
 		
 		playership = new Ship( phoenix.resolution.x/2, phoenix.resolution.y-50 );
 		
-		for( y = 50; y <= 110; y+=60 ) {
-			for( x = 50; x <= phoenix.resolution.x -210; x+=60 ) {
-				new Alien( x, y );
-				enemy_count++;
-			}
-		}
+		addAliens();
 	}
 );
 
@@ -36,4 +31,12 @@ time.schedule ( 2000, true, function(){ console.log('test!') });
 
 //The main loop, update your game here
 core.onUpdate = function( dt ){
+}
+
+function addAliens() {
+	for( y = 50; y <= 110; y+=60 ) {
+		for( x = 50; x <= phoenix.resolution.x -210; x+=60 ) {
+			new Alien( x, y );
+		}
+	}
 }
