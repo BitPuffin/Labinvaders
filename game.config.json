@@ -9,7 +9,7 @@
 	"debug": false,
 	"debugright" : true,
 	"datapaths": [],
-	"resolution" : vec2( 500, 500 ),
+	"resolution" : vec2( 1000, 500 ),
 	"fullscreen" : false,
 	"resizable" : false,
 	"clearcolor" :  color(0.0, 0.0, 0.0, 1),

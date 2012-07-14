@@ -31,7 +31,6 @@ var Ship = new Class(
 		
 		fire : function() {
 			new Shot( this.pos );
-			console.log("Fire!");
 			this.cooldown = true;
 			this.cooldown_counter = 0;
 		},
@@ -49,6 +48,7 @@ var Ship = new Class(
 		die : function() {
 			events.disconnect(this.update_event);
 			this.drop();
+			events.fire( 'game::lose' );
 		}
 	}
 );

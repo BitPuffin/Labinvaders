@@ -1,6 +1,6 @@
 game.aliens = [];
 
-var alien_direction = 1;
+var alien_direction = game.settings.alien_speed;
 
 function flipDirection() {
 	alien_direction = -alien_direction;
@@ -17,7 +17,7 @@ var Alien = new Class(
 			this.out_of_bounds_event = events.connect( 'alien::oob', this.outOfBounds.bind(this) );
 			this.left_border = 50;
 			this.right_border = phoenix.resolution.x - 50;
-			this.step_down = 25;
+			this.step_down = game.settings.alien_down_step;
 			
 			game.aliens.push( this );
 		},
@@ -25,6 +25,10 @@ var Alien = new Class(
 		update : function() {
 			this.move();
 			this.checkCollision();
+			
+			if( this.pos.y >= phoenix.resolution.y -50 ) {
+				events.fire( 'game::lose' );
+			}
 		},
 		
 		outOfBounds : function() {
