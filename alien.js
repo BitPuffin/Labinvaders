@@ -65,6 +65,7 @@ var Alien = new Class(
 		},
 		
 		die : function() {
+			audio.playSound( 'alien_die' );
 			events.disconnect( this.update_event );
 			events.disconnect( this.out_of_bounds_event );
 			this.drop();

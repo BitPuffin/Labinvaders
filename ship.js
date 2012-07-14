@@ -46,6 +46,7 @@ var Ship = new Class(
 		},
 		
 		die : function() {
+			audio.playSound( 'ship_expload' );
 			events.disconnect(this.update_event);
 			this.drop();
 			events.fire( 'game::lose' );

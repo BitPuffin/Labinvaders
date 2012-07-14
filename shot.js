@@ -10,6 +10,7 @@ var Shot = new Class(
 			game.projectiles.push( this );
 			this.update_event = events.connect( 'onUpdate', this.update.bind(this) );
 			this.bullet_speed = 8;
+			audio.playSound( 'fire' );
 		},
 		
 		die : function() {

@@ -46,6 +46,12 @@ core.onUpdate = function( dt ){
 	}
 }
 
+function loadSounds() {
+	audio.createSound( 'fire', project.path('shoot.wav') );
+	audio.createSound( 'alien_die', project.path('alien_die.wav') );
+	audio.createSound( 'ship_expload', project.path('ship_die.wav') );
+}
+
 function addAliens() {
 	for( y = 50; y <= ( 60 * game.settings.alien_rows ); y+=60 ) {
 		for( x = 50; x <= phoenix.resolution.x -210; x+=60 ) {
